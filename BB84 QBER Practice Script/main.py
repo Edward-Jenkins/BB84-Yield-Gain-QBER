@@ -23,7 +23,7 @@ MeanPhotonNums=np.linspace(0.0001,2,100)  #Mean photon num(s) of Alices WCP
 #####################################################################################################
 
 channel=FibreChannel(alpha)
-detector=Detector(eta_det,T_bob,p_dark,eta_det)
+detector=Detector(eta_det,T_bob,p_dark,e_det)
 protocol=BB84(channel,detector)
 
 Gain=[]
@@ -70,7 +70,7 @@ Gain=[]
 ErrorGain=[]
 QBER=[]
 for d in distances:
-     obs=protocol.GetObservables(mu,l)
+     obs=protocol.GetObservables(mu,d)
      Gain.append(obs["Q_mu"])
      ErrorGain.append(obs["ErrorGain"])
      QBER.append(obs["QBER"])
