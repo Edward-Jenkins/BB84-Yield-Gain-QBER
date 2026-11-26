@@ -17,7 +17,7 @@ e_det={"Z":0.02,"X":0.03}
 #Parameters
 
 l=10    #Distance(s) between Alice and Bob
-MeanPhotonNums=np.linspace(0.000000001,100,200)  #Mean photon num(s) of Alices WCP
+MeanPhotonNums=np.linspace(0.000000001,1000,200)  #Mean photon num(s) of Alices WCP
 
 #####################################################################################################
 
@@ -47,7 +47,7 @@ ax.plot(MeanPhotonNums,Gain,color="orange")
 ax.set_xlabel("Mean Photon Number per pulse")
 ax.set_ylabel("Gain per pulse")
 plt.show()
-fig.savefig('Figures/Simple_Gain_vs_Mu')
+fig.savefig('BB84 QBER Practice Script\Figures\Simple_Gain_vs_Mu')
 plt.close(fig)
 
 fig,ax = plt.subplots()
@@ -58,19 +58,19 @@ ax.set_xlabel("Mean Photon Number per pulse")
 ax.set_ylabel("Error Gain per pulse")
 ax.legend()
 plt.show()
-fig.savefig('Figures/Simple_ErrorGain_vs_Mu')
+fig.savefig('BB84 QBER Practice Script\Figures\Simple_ErrorGain_vs_Mu')
 plt.close(fig)
 
 fig,ax = plt.subplots()
 ax.set_title("QBER vs WCP Strength")
 ax.plot(MeanPhotonNums,QBER_Z,color="orange",label="Z Basis")
 ax.plot(MeanPhotonNums,QBER_X,color="black",label="X Basis")
-ax.set_yscale('log')
+
 ax.set_xlabel("Mean Photon Number per pulse")
 ax.set_ylabel("QBER")
 ax.legend()
 plt.show()
-fig.savefig('Figures/Simple_QBER_vs_Mu')
+fig.savefig('BB84 QBER Practice Script\Figures\Simple_QBER_vs_Mu')
 plt.close(fig)
 ######################################################################################################
 
@@ -98,7 +98,7 @@ ax.set_xlabel("Distance /km")
 ax.set_ylabel("Gain")
 ax.set_yscale('log')
 plt.show()
-fig.savefig('Figures/Simple_Gain_vs_Distance')
+fig.savefig('BB84 QBER Practice Script\Figures\Simple_Gain_vs_Distance')
 plt.close(fig)
 
 
@@ -110,5 +110,5 @@ ax.set_xlabel("Distance /km")
 ax.set_ylabel("QBER")
 ax.legend()
 plt.show()
-fig.savefig('Figures/Simple_QBER_vs_Distance')
+fig.savefig('BB84 QBER Practice Script\Figures\Simple_QBER_vs_Distance')
 plt.close(fig)
