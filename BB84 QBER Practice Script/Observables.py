@@ -17,9 +17,18 @@ class BB84:
         eta=self.detector.GetEta(T)
         e0=0.5
         
-        Q_mu=1-(1-p_dark)*np.exp(-eta*mu)  #Total gain for protocol per pulse
-        ErrorGain=e0*p_dark+e_det*(1-np.exp(-eta*mu))
-        E_mu=ErrorGain/Q_mu
+        Q_mu=p_dark+1-np.exp(-eta*mu)  #Total gain for protocol per pulse
+
+        ErrorGain={
+            "Z": e0*p_dark+e_det["Z"]*(1-np.exp(-eta*mu)),
+            "X": e0*p_dark+e_det["X"]*(1-np.exp(-eta*mu))
+        }
+
+        E_mu={
+            "Z":ErrorGain["Z"]/Q_mu,
+            "X" :ErrorGain["X"]/Q_mu
+        }
+
 
         return {"Q_mu" :Q_mu,
                 "ErrorGain": ErrorGain,
