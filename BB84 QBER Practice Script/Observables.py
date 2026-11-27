@@ -20,8 +20,8 @@ class BB84:
         Q_mu=1-(1-p_dark)**2*np.exp(-mu*eta)  #Total gain for protocol per pulse
 
         ErrorGain={
-            "Z": Q_mu/2+Q_mu/2*(1-p_dark)*(np.exp(-mu*eta*(1-e_det["Z"]))-np.exp(-mu*eta*e_det["Z"])),
-            "X": Q_mu/2+Q_mu/2*(1-p_dark)*(np.exp(-mu*eta*(1-e_det["X"]))-np.exp(-mu*eta*e_det["X"]))
+            "Z": Q_mu/2+1/2*(1-p_dark)*(np.exp(-mu*eta*(1-e_det["Z"]))-np.exp(-mu*eta*e_det["Z"])),
+            "X": Q_mu/2+1/2*(1-p_dark)*(np.exp(-mu*eta*(1-e_det["X"]))-np.exp(-mu*eta*e_det["X"]))
         }
 
         E_mu={
